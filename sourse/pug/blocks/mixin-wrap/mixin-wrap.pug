@@ -127,17 +127,17 @@ mixin soc()
 
 //- menu
 mixin mnu()
-	-
-		var nav= {
-			"Главная":"/",
-			"Номера":"#",
-			"Ресторан":"#",
-			"Контакты":"#",
-			"Забронировать":"#"
-			}
 	+e.UL.nav
-		each linkPatch, linkName in nav
-			+e.LI.item: +e.A.link(href= linkPatch)= linkName
+		+e.LI.item
+			+e.A.link.scroll-link(href="/") Главная
+		+e.LI.item
+			+e.A.link.scroll-link(href="#s-slider") Номера
+		+e.LI.item
+			+e.A.link.scroll-link(href="#s-breakfast") Ресторан
+		+e.LI.item
+			+e.A.link.scroll-link(href="#s-contact") Контакты
+		+e.LI.item
+			+e.A.link.link-modal(href="#modal-order") Забронировать
 //- /menu
 
 
