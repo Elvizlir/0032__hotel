@@ -79,6 +79,60 @@ a {
 	}
 }
 
+.modal-room{
+	max-width: rem(900) !important;
+
+	&__title{
+		text-align: center;
+		@include rfs(24);
+		max-width: rem(600);
+		margin: 0 auto rem(45);
+		@extend .mono;
+	}
+
+	&__img-col{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__main-img{
+		flex-shrink: 0;
+		border-radius: rem(10);
+		overflow: hidden;
+		margin: 0 auto rem(20);
+		display: inline-block;
+	}
+
+	&__pre-img-wrap{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		a{
+			display: inline-block;
+			margin: rem(10);
+		}
+	}
+	
+	p{
+		font-size: rem(16);
+		line-height: 1.2;
+		margin-bottom: rem(15);
+	}
+	
+	&__add-info{
+		margin-top: auto;
+		padding-left: rem(20);
+	}
+	
+	ul{
+		font-size: rem(16);
+		list-style: none;
+		margin: 0;
+		line-height: 1.2;
+	}
+}
+
 .mfp-close {
 	user-select: none; // width: 44px;
 	// height: 44px;

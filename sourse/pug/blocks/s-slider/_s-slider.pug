@@ -11,7 +11,7 @@ mixin s-slider()
 				mixin slider-i(i, t)
 					.slick-slide&attributes(attributes)
 						+e.item
-							+e.A.item-img-wrap(href='#')
+							+e.A.item-img-wrap.link-modal(href='#modal-room')
 								img(src=`img/@2x/slider-i${i}.jpg` alt='')
 							+e.item-descr
 								img.res-i(src='img/@2x/slider-info-bg.png' alt='')
