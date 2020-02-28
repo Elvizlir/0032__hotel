@@ -136,14 +136,14 @@ function eventHandler() {
 		// 
 		// скрывает моб меню
 
-		var topH = $("header ").innerHeight();
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		}); // конец добавил
+		var topH = $("header ").innerHeight(); // $(window).scroll(function() {
+		// 	if ($(window).scrollTop() > topH) {
+		// 		$('.top-nav  ').addClass('fixed');
+		// 	} else {
+		// 		$('.top-nav  ').removeClass('fixed');
+		// 	}
+		// });
+		// конец добавил
 
 		if (window.matchMedia("(min-width: 992px)").matches) {
 			JSCCommon.closeMenu();

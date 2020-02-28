@@ -1,7 +1,42 @@
 .header-block {
 	display: block;
-	padding: rem(20) 0 rem(40);
+	padding: 0;
 	text-align: center;
+	
+	&__wrapper{
+		padding: rem(98) 0 rem(40);
+	}
+
+	.bg-img{
+    object-position: bottom;
+  }
+
+  .abs-img{
+    z-index: -1;
+    top: rem(-15);
+    right: rem(-120);
+  }
+  
+  &__booking-block{
+    @include media-breakpoint-down(sm){
+      display: none;
+    }
+    position: absolute;
+    top: 35%;
+    left: rem(20);
+    text-align: center;
+    color: #fff;
+    @extend .mono;
+    img{
+      margin-bottom: rem(5);
+    }
+  }
+  
+  &__booking-text{
+    display: block;
+    max-width: rem(130);
+    line-height: 1;
+  }
  
 	h1{
 		margin-bottom: rem(20);
@@ -32,6 +67,7 @@
 	}
 
 	&__abs-block{
+		pointer-events: none;
 		@include media-breakpoint-down(sm){
 			display: none;
 		}

@@ -1,39 +1,6 @@
 .header{
   // background-color: #F7DCCC;
 
-  .bg-img{
-    object-position: bottom;
-  }
-
-  .abs-img{
-    z-index: -1;
-    top: rem(-15);
-    right: rem(-120);
-  }
-  
-  &__booking-block{
-    @include media-breakpoint-down(sm){
-      display: none;
-    }
-    position: absolute;
-    top: 35%;
-    left: rem(20);
-    text-align: center;
-    color: #fff;
-    @extend .mono;
-    &:hover{
-      color: $success;
-    }
-    img{
-      margin-bottom: rem(5);
-    }
-  }
- 
-  &__booking-text{
-    display: block;
-    max-width: rem(130);
-    line-height: 1;
-  }
 
   // 
   @include media-breakpoint-up(xl) {}

@@ -1,0 +1,30 @@
+mixin s-in-room()
+	// start s-in-room
+	+b.SECTION.s-in-room.bg-wrap.section#s-in-room&attributes(attributes)
+		.container
+			+e.wrapper
+				+e.IMG.abs-img--top(src='img/@2x/in-room-top.png' alt='')
+				+e.IMG.abs-img--right(src='img/@2x/in-room-right.png' alt='')
+				+e.IMG.abs-img--left(src='img/@2x/in-room-left.png' alt='')
+				h2 В каждом номере
+
+				+e.row.row
+					mixin in-room-item(i, t)
+						+e.col.col-6
+							+e.item
+								+e.icon-wrap
+									+icon(`in-room-i${i}`)
+								+e.item-descr
+									+e.item-title=t
+									block
+					+in-room-item('1', 'Бесплатный Wi-Fi')
+					+in-room-item('2', 'Кондиционер')
+					+in-room-item('3', 'Чайник')
+						+e.item-info С чайным набором, кофе и пьтьевой водой
+					+in-room-item('4', 'Холодильник')
+					+in-room-item('5', 'Фен')
+						+e.item-info И косметические наборы
+					+in-room-item('6', 'Телевизор')
+					+in-room-item('7', 'Круглосуточная стойка регистрации')
+					+in-room-item('8', 'Ежедневная уборка')
+	// end s-in-room

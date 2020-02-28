@@ -1,13 +1,20 @@
 mixin header-block()
 	// start header-block
-	+b.header-block#header-block
-		h1 Уютные аппартаменты в центре&nbsp;Санкт-Петербурга,&nbsp;с&nbsp;большой заботой о гостях!
-		+e.btn.btn.btn-success(href='#') Забронируйте номер прямо сейчас
-		+e.bottom-block
-			+e.IMG.laptop.res-i(src='img/@2x/header-laptop.png' alt='')
+	+b.header-block.bg-wrap#header-block
+		img.bg-img(src='img/@2x/header-bg.jpg' alt='')
+		.container
+			+e.wrapper.bg-wrap
+				img.abs-img(src='img/@2x/header-plant.png' alt='')
+				+e.booking-block
+					img.res-i(src='img/@2x/header-booking.png' alt='')
+					+e.booking-text Оценка по отзывам на букинге 9,2
+				h1 Уютные аппартаменты в центре&nbsp;Санкт-Петербурга,&nbsp;с&nbsp;большой заботой о гостях!
+				+e.btn.btn.btn-success(href='#') Забронируйте номер прямо сейчас
+				+e.bottom-block
+					+e.IMG.laptop.res-i(src='img/@2x/header-laptop.png' alt='')
 
-			+e.abs-block Парковка 24/7
-			+e.abs-block Домашний уют, <br>всего 9 номеров
-			+e.abs-block Вас встретят в любое удобное время!
-			+e.abs-block Отчётные документы для бизнес гостей
+					+e.abs-block Парковка 24/7
+					+e.abs-block Домашний уют, <br>всего 9 номеров
+					+e.abs-block Вас встретят в любое удобное время!
+					+e.abs-block Отчётные документы для бизнес гостей
 	// end header-block

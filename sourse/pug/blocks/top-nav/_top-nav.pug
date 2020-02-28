@@ -19,19 +19,20 @@ mixin mob-mnu()
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		+e.row.row
-			.col-lg-auto.col
-				+e.A.logo-wrap(href='/')
-					img.res-i(src='img/@2x/header-logo.png' alt='')
-			.col.d-none.d-lg-block
-				+mnu()
-			+e.phone-col.col-auto
-				+e.A.phone(href='tel:+790461-1206') +7 (904) 611-12-06
-				+e.A.modal-link(href='#')
-					span Перезвонить вам?
-					+icon('phone')
-			.col-auto
-				+b.toggle-menu-mobile--js.d-lg-none
-					span
+		.container
+			+e.row.row
+				.col-lg-auto.col
+					+e.A.logo-wrap(href='/')
+						img.res-i(src='img/@2x/header-logo.png' alt='')
+				.col.d-none.d-lg-block
+					+mnu()
+				+e.phone-col.col-auto
+					+e.A.phone(href='tel:+790461-1206') +7 (904) 611-12-06
+					+e.A.modal-link(href='#')
+						span Перезвонить вам?
+						+icon('phone')
+				.col-auto.d-lg-none
+					+b.toggle-menu-mobile--js.d-lg-none
+						span
 					
 	// end top-nav
