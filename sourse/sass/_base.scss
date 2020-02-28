@@ -259,8 +259,15 @@ body {
 }
 
 .slick-arrow {
+	width: rem(40);
+	height: rem(40);
+	background-color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
-	top: 50%;
+	top: 30%;
 	transform: translateY(-50%);
 	z-index: 2;
 	cursor: pointer;
@@ -274,6 +281,10 @@ body {
 
 	&.l {
 		left: 0;
+		@include media-breakpoint-up(xl){
+			left: 28%;
+		}
+
 
 		svg {
 			@include transform(rotateY(180deg));
@@ -282,11 +293,14 @@ body {
 
 	&.r {
 		right: 0;
+		@include media-breakpoint-up(xl){
+			right: 28%;
+		}
 
 	}
 
 	svg {
-		width: 17px;
+		width: 22px;
 		height: auto;
 	}
 }

@@ -1,4 +1,22 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			h2 footer
+			+e.row.row
+				+e.col.col-md-auto.col-sm
+					+e.A.logo(href='#')
+						img.res-i(src='img/@2x/logo.png' alt='')
+				+e.col.col-md.col-sm-auto
+					+e.UL.list
+						li
+							a(href='#') Номера
+						li
+							a(href='#') Мы на карте
+						li
+							a(href='#') Ресторан
+				+e.phone-col.col-md-auto
+					+e.A.phone(href='tel:+79046111206') +7 (904) 611-12-06
+
+			+e.author
+				span Дизайн сайта: Анна Новак
+				span Instagram: 
+					a(href='https://www.instagram.com/novakaann/') novakaann

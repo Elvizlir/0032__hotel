@@ -1,9 +1,26 @@
 mixin s-contact()
 	// start s-contact
 	+b.s-contact.section.block-with-lazy#s-contact&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 s-contact
-				
-			.row
+		.container.bg-wrap
+			+e.IMG.abs-img--right(src='img/@2x/contact-right.png' alt='')
+			+e.IMG.abs-img--bottom(src='img/@2x/contact-bottom.png' alt='')
+			+e.wrapper
+				.row
+					.col-md-6
+						+b.section-title
+							h2 Наши контакты
+						+e.item
+							+e.item-title Адрес
+							p Санкт-Петербург
+							p Улица Гончарная дом 26
+						+e.item
+							+e.item-title Телефон
+							p
+								a(href='tel:+79046111206') +7 (904) 611-12-06
+							p
+								a(href='tel:+78124161089') +7 (812) 416-10-89
+					+e.phone-col.col-md-6
+						+e.phone-block
+							img.res-i(src='img/@2x/phone.png' alt='')
+							+e.btn.btn.btn-success(href='#') Забронируйте номер прямо сейчас
 	// end s-contact

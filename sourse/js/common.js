@@ -1,11 +1,11 @@
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	btnToggleMenuMobile : [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile : document.querySelector(".menu-mobile--js"),
-	menuMobileLink : [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
-	body : document.querySelector("body"),
+	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
+	body: document.querySelector("body"),
 
-	modalCall() { 
+	modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
 			infobar: false,
@@ -26,55 +26,55 @@ const JSCCommon = {
 				},
 			},
 		});
-		$(".modal-close-js").click(function() {
+		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		})
 	},
 	// /magnificPopupCall
 	toggleMenu() {
-		let  _this = this;
+		let _this = this;
 		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.addEventListener('click', function() {
+			element.addEventListener('click', function () {
 
 				_this.btnToggleMenuMobile.forEach(function (element) {
 					element.classList.toggle("on");
 				});
 				_this.menuMobile.classList.toggle("active");
 				_this.body.classList.toggle("fixed");
-				
+
 				return false;
 			});
 		});
 	},
 
 	closeMenu() {
-		let  _this = this;
+		let _this = this;
 		_this.btnToggleMenuMobile.forEach(function (element) {
 			element.classList.remove("on");
-			
+
 		});
 		_this.menuMobile.classList.remove("active");
 		_this.body.classList.remove("fixed");
-		
+
 	},
 
 	mobileMenu() {
 		// закрыть/открыть мобильное меню
-		let  _this = this;
+		let _this = this;
 
 		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element)  {
-			element.addEventListener('click',  function (e) {
+		_this.menuMobileLink.forEach(function (element) {
+			element.addEventListener('click', function (e) {
 				console.log(element);
-				_this.closeMenu(); 
-				
+				_this.closeMenu();
+
 			});
 		})
-		document.addEventListener('mouseup', function (event)   {
+		document.addEventListener('mouseup', function (event) {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			if (!container) {
-				_this.closeMenu(); 
-				
+				_this.closeMenu();
+
 			}
 		});
 	},
@@ -163,7 +163,7 @@ function eventHandler() {
 		}
 	}
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		heightses();
 
 	});
@@ -171,16 +171,18 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function() {
+	$(" .top-nav li a, .scroll-link").click(function () {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
-		$('html, body').animate({ scrollTop: destination }, 1100);
+		$('html, body').animate({
+			scrollTop: destination
+		}, 1100);
 
 		return false;
 	});
 
-	const icon = '<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve" ><path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" ></path>';
+	const icon = '<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 492.004 492.004" fill="rgb(93,102,62)" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve" ><path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" ></path>';
 	const arrl2 = (' <div class="r">' + icon),
 		arrr2 = (' <div class="l">' + icon);
 	// // карусель
@@ -196,32 +198,62 @@ function eventHandler() {
 		autoplaySpeed: 6000,
 		lazyLoad: 'progressive',
 	};
-	$('.s-gal__slider--js').slick({
+	let $carousel = $('.s-slider__slider--js').slick({
 		...defaultSlide,
 
 		slidesToShow: 1,
-		responsive: [{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 4,
-			}
-		}, {
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 3,
-			}
+		centerMode: true,
+		variableWidth: true,
+		// responsive: [{
+		// 	breakpoint: 1200,
+		// 	settings: {
+		// 		slidesToShow: 4,
+		// 	}
+		// }, {
+		// 	breakpoint: 992,
+		// 	settings: {
+		// 		slidesToShow: 3,
+		// 	}
 
-		}, {
-			breakpoint: 576,
-			settings: {
-				slidesToShow: 2,
-				arrows: true,
-			}
+		// }, {
+		// 	breakpoint: 576,
+		// 	settings: {
+		// 		slidesToShow: 2,
+		// 		arrows: true,
+		// 	}
 
 
-		}],
-
+		// }],
 	});
+	
+	$carousel.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		var
+			direction,
+			slideCountZeroBased = slick.slideCount - 1;
+
+		if (nextSlide == currentSlide) {
+			direction = "same";
+
+		} else if (Math.abs(nextSlide - currentSlide) == 1) {
+			direction = (nextSlide - currentSlide > 0) ? "right" : "left";
+
+		} else {
+			direction = (nextSlide - currentSlide > 0) ? "left" : "right";
+		}
+
+		if (direction == 'right') {
+			$('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', $carousel).addClass('slick-current-clone-animate');
+		}
+
+		if (direction == 'left') {
+			$('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', $carousel).addClass('slick-current-clone-animate');
+		}
+	});
+
+	$carousel.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+		$('.slick-current-clone-animate', $carousel).removeClass('slick-current-clone-animate');
+	});
+
 	// $('.s-gal__slider\
 	// ,.slider-for2 ')
 	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {
@@ -251,12 +283,12 @@ function eventHandler() {
 	// });
 	// modal window
 
- 
+
 	//    const wow = new WOW({ mobile: false });
 	//         wow.init();
- 
 
-	var gets = (function() {
+
+	var gets = (function () {
 		var a = window.location.search;
 		var b = new Object();
 		var c;
@@ -268,7 +300,7 @@ function eventHandler() {
 		return b;
 	})();
 	// form
-	$("form").submit(function(e) {
+	$("form").submit(function (e) {
 		e.preventDefault();
 		const th = $(this);
 		var data = th.serialize();
@@ -280,7 +312,7 @@ function eventHandler() {
 			url: 'action.php',
 			type: 'POST',
 			data: data,
-		}).done(function(data)  {
+		}).done(function (data) {
 
 			$.fancybox.close();
 			$.fancybox.open({
@@ -288,14 +320,14 @@ function eventHandler() {
 				type: 'inline'
 			});
 			// window.location.replace("/thanks.html");
-			setTimeout(function() {
+			setTimeout(function () {
 				// Done Functions
 				th.trigger("reset");
 				// $.magnificPopup.close();
 				// ym(53383120, 'reachGoal', 'zakaz');
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
-		}).fail(function() { });
+		}).fail(function () {});
 
 	});
 

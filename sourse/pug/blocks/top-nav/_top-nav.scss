@@ -45,6 +45,14 @@
 		align-items: center;
 	}
 
+	&__logo-wrap{
+		img{
+			@include media-breakpoint-down(sm){
+				max-width: rem(100);
+			}
+		}
+	}
+
 	&__phone-col{
 		text-align: right;
 	}

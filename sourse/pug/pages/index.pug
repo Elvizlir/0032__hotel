@@ -4,6 +4,10 @@ extends layout/main.pug
 include ../blocks/s-content/_s-content.pug
 include ../blocks/s-contact/_s-contact.pug
 include ../blocks/s-in-room/_s-in-room.pug
+include ../blocks/s-slider/_s-slider.pug
+include ../blocks/s-breakfast/_s-breakfast.pug
+include ../blocks/s-map/_s-map.pug
+include ../blocks/s-review/_s-review.pug
 
 block variables
 	- let  mainPage= null
@@ -16,6 +20,9 @@ block pagecontent
 		+top-nav()
 		+header-block()
 	+s-in-room()
-	+s-form()
+	+s-slider()
+	+s-breakfast()
+	+s-map()
+	+s-review()
 	+s-contact()
 	+footer()

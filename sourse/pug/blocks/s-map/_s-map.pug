@@ -1,0 +1,21 @@
+mixin s-map()
+	// start s-map
+	+b.SECTION.s-map.section#s-map&attributes(attributes)
+		.container.bg-wrap
+			+e.IMG.abs-img(src='img/@2x/map-bottom.png' alt='')
+			+e.wrapper
+				+e.row.row
+					.col-md-6
+						+b.section-title
+							h2 Отель в самом центре Санкт-Петербурга
+						p 1 минута до Невского проспекта
+						p 9 мин до главного ТЦ Питера “Галерея”
+						p 9 мин до метро пл. Востания
+						p 500 метров до Московского Железнодорожного Вокзала
+						p 10 мин до Владимирского Собора
+						p 15 км до аэропорта “Пулково”
+
+					+e.map-col.col-md-6.order-md-first
+						+e.map-wrap
+							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5b6030e9698fb4876d83c64ebecdccf43dc6eb8377cb34c033a774c91abca9f4&amp;source=constructor" width="500" height="400"></iframe>
+	// end s-map

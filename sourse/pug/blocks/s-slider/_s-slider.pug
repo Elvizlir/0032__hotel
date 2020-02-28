@@ -1,0 +1,23 @@
+mixin s-slider()
+	// start s-slider
+	+b.SECTION.s-slider.section#s-slider&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Посмотрите фото и ВЫБЕРИТЕ номер
+				+e.subtitle На выбор 4 варианта размещения для Вашего комфорта
+				+e.info-block Нажмите на фото и посмотрите полное описание номера
+
+			+e.slider--js
+				mixin slider-i(i, t)
+					.slick-slide&attributes(attributes)
+						+e.item
+							+e.A.item-img-wrap(href='#')
+								img(src=`img/@2x/slider-i${i}.jpg` alt='')
+							+e.item-descr
+								img.res-i(src='img/@2x/slider-info-bg.png' alt='')
+								+e.item-title=t
+				+slider-i('1', 'Двухместный номер с 1 кроватью')
+				+slider-i('2', 'Номер-студио с диваном-кроватью')
+				+slider-i('3', 'Двухместный номер с 2 отдельными кроватями')
+			+e.btn.btn.btn-warning(href='#') Перейти к бронированию
+	// end s-slider

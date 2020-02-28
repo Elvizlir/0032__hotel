@@ -1,0 +1,23 @@
+mixin s-breakfast()
+	// start s-breakfast
+	+b.SECTION.s-breakfast.section#s-breakfast&attributes(attributes)
+		.container.bg-wrap
+			+e.IMG.abs-img--right(src='img/@2x/breakfast-right.png' alt='')
+			+e.IMG.abs-img--bottom(src='img/@2x/breakfast-bottom.png' alt='')
+			+e.wrapper
+				+b.section-title
+					h2 Вкуснейший завтрак
+					+e.subtitle Вы можете насладиться завтраком в ресторане “Mama Roma”
+					
+				+e.row.row
+					+e.col.col-sm-6
+						+e.item-title Место
+						+e.item-descr Порадуйте себя завтраком в ресторане “Mama Roma”
+					+e.col.col-sm-6
+						+e.item-title Кухня
+						+e.item-descr Итальянская кухня
+					+e.col.col-12
+						+e.item-title Завтраки
+						+e.item-descr По будням - шведский стол<br>На выходных - континентальный завтрак
+				+e.btn.btn.btn-warning(href='#') Узнать больше о ресторане
+	// end s-breakfast
