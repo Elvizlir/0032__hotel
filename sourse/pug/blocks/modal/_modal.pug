@@ -32,15 +32,36 @@ mixin modal()
 	//- 			.h3 Скоро с Вами свяжутся
 	//- 			br 
 	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
+		+form-wrap()(id="modal-callback" class="  modal-win modal-form" )
 			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
+				+e.H2.title Обратный звонок
+				p Заполните заявку и мы свяжемся с Вами в ближайшее время
+			+input("Ваше Имя")
 			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
+			+e.BUTTON.btn.btn.btn-warning(type="submit") Отправить
+			+polite()
+		
+		
+		+form-wrap()(id="modal-order" class="  modal-win modal-form modal-order" )
+			.text-center
+				+e.H2.title Бронирование номера
+			.row
+				.col-12
+					+input("Ваше Имя*")(required)
+				.col-12
+					+input("Ваш телефон","tel")(required)
+				.col-sm-6
+					+input("дд.мм.гггг","date",'Заезд')(required)
+				.col-sm-6
+					+select("На","Кол-во ночей",'2 ночи','120 ночей')(required)
+				.col-md-8.col-12
+					+select("Номера","Выберите номер",'Двухмесный номер с 1 кроватью','Двухмесный номер с 1 кроватью')(required)
+				.col-md-2.col-sm-6
+					+select("Взрослые","2",'4')(required)
+				.col-md-2.col-sm-6
+					+select("Дети","0",'4')(required)
+
+			+e.BUTTON.btn.btn.btn-warning(type="submit") Отправить
 			+polite()
 		// #modal-call
 	// modal

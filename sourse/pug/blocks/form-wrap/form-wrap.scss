@@ -4,17 +4,31 @@
 			
 		}
 		&__input{
-			// @extend .form-control;
+			display: block;
+			border-radius: rem(20);
+			font-size: rem(14);
+			background-color: $success;
+			color: #fff;
+			box-shadow: -1px 2px 5px rgba(19, 21, 40, 0.5);
+			border: none;
+			
 		//  outline: 0 !important;
 		 resize: none;
  	}
  	&__btn{
+		box-shadow: 0 3px 4px #846435;
  		cursor: pointer;
  	}
  	label{
  		width: 100%;
  		display: block;
  	}
+}
+
+.modal-order{
+	.row{
+		@include roww(5)
+	}
 }
 
 

@@ -69,7 +69,7 @@
 									</li>
 								</ul>
 							</div>
-							<div class="top-nav__phone-col col-auto"><a class="top-nav__phone" href="tel:+790461-1206">+7 (904) 611-12-06</a><a class="top-nav__modal-link" href="#"><span>Перезвонить вам?</span>
+							<div class="top-nav__phone-col col-auto"><a class="top-nav__phone" href="tel:+790461-1206">+7 (904) 611-12-06</a><a class="top-nav__modal-link link-modal" href="#modal-callback"><span>Перезвонить вам?</span>
 								<svg class="icon icon-phone ">
 									<use xlink:href="img/svg/sprite.svg#phone"></use>
 								</svg></a>
@@ -90,7 +90,7 @@
 								<div class="header-block__booking-text">Оценка по отзывам на букинге 9,2
 								</div>
 							</div>
-							<h1>Уютные аппартаменты в центре&nbsp;Санкт-Петербурга,&nbsp;с&nbsp;большой заботой о гостях!</h1><a class="header-block__btn btn btn-success" href="#">Забронируйте номер прямо сейчас</a>
+							<h1>Уютные аппартаменты в центре&nbsp;Санкт-Петербурга,&nbsp;с&nbsp;большой заботой о гостях!</h1><a class="header-block__btn btn btn-success link-modal" href="#modal-order">Забронируйте номер прямо сейчас</a>
 							<div class="header-block__bottom-block"><img class="header-block__laptop res-i" src="img/@2x/header-laptop.png" alt="" role="presentation"/>
 								<div class="header-block__abs-block">Парковка 24/7
 								</div>
@@ -235,7 +235,7 @@
 								</div>
 							</div>
 						</div>
-					</div><a class="s-slider__btn btn btn-warning" href="#">Перейти к бронированию</a>
+					</div><a class="s-slider__btn btn btn-warning link-modal" href="#modal-order">Перейти к бронированию</a>
 				</div>
 			</section>
 			<!-- end s-slider-->
@@ -379,7 +379,7 @@
 								</div>
 							</div>
 							<div class="s-contact__phone-col col-md-6">
-								<div class="s-contact__phone-block"><img class="res-i" src="img/@2x/phone.png" alt=""/><a class="s-contact__btn btn btn-success" href="#">Забронируйте номер прямо сейчас</a>
+								<div class="s-contact__phone-block"><img class="res-i" src="img/@2x/phone.png" alt=""/><a class="s-contact__btn btn btn-success link-modal" href="#modal-order">Забронируйте номер прямо сейчас</a>
 								</div>
 							</div>
 						</div>
@@ -408,7 +408,7 @@
 			</footer>
 		</div>
 		<div class="d-none">
-			<div class="form-wrap modal-win modal-form" id="modal-call">
+			<div class="form-wrap modal-win modal-form" id="modal-callback">
 				<form>
 					<input type="hidden" name="example-input-field"/>
 					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
@@ -417,19 +417,98 @@
 					<input class="utm_medium" type="hidden" name="utm_medium"/>
 					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
 					<div class="text-center">
-						<div class="form-wrap__title h3 ttu">Обратный звонок
-						</div>
-						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
+						<h2 class="form-wrap__title">Обратный звонок
+						</h2>
+						<p>Заполните заявку и мы свяжемся с Вами в ближайшее время</p>
 					</div>
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text" required="required"/> 
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text"/>
 					</div>
 					<!-- +e.input-wrap-->
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
 					</div>
-					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
-					<div class="form-wrap__polite">
-						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
-						</label>
+					<!-- +e.input-wrap-->
+					<button class="form-wrap__btn btn btn-warning" type="submit">Отправить
+					</button>
+					<div class="form-wrap__polite">Нажимая кнопку, вы соглашаетесь на обработку личных данных
+					</div>
+				</form>
+			</div>
+			<div class="form-wrap modal-win modal-form modal-order" id="modal-order">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<h2 class="form-wrap__title">Бронирование номера
+						</h2>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя*" name="text" required="required"/>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-12">
+							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-sm-6">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Заезд</span><input class="form-wrap__input form-control" type="date" placeholder="дд.мм.гггг" name="date" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-sm-6">
+							<div class="form-wrap__input-wrap">
+								<label><span class="form-wrap__title">На</span>
+									<select class="form-wrap__input form-control">
+										<option>Кол-во ночей</option>
+										<option>2 ночи</option>
+										<option>120 ночей</option>
+									</select>
+								</label>
+							</div>
+						</div>
+						<div class="col-md-8 col-12">
+							<div class="form-wrap__input-wrap">
+								<label><span class="form-wrap__title">Номера</span>
+									<select class="form-wrap__input form-control">
+										<option>Выберите номер</option>
+										<option>Двухмесный номер с 1 кроватью</option>
+										<option>Двухмесный номер с 1 кроватью</option>
+									</select>
+								</label>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-6">
+							<div class="form-wrap__input-wrap">
+								<label><span class="form-wrap__title">Взрослые</span>
+									<select class="form-wrap__input form-control">
+										<option>2</option>
+										<option>4</option>
+									</select>
+								</label>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-6">
+							<div class="form-wrap__input-wrap">
+								<label><span class="form-wrap__title">Дети</span>
+									<select class="form-wrap__input form-control">
+										<option>0</option>
+										<option>4</option>
+									</select>
+								</label>
+							</div>
+						</div>
+					</div>
+					<button class="form-wrap__btn btn btn-warning" type="submit">Отправить
+					</button>
+					<div class="form-wrap__polite">Нажимая кнопку, вы соглашаетесь на обработку личных данных
 					</div>
 				</form>
 			</div>
